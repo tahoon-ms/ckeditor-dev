@@ -16,6 +16,7 @@ New Features:
 Fixed Issues:
 
 * [#1477](https://github.com/ckeditor/ckeditor-dev/issues/1477): Fixed: [Balloon Toolbar](https://ckeditor.com/cke4/addon/balloontoolbar) on destroy doesn't destroy its content.
+* [#1986](https://github.com/ckeditor/ckeditor-dev/issues/1986): Fixed: cell properties dialog shows styles that are not allowed through allowedContent.
 
 API Changes:
 
