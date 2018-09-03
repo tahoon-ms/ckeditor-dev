@@ -19,6 +19,7 @@ Fixed Issues:
 API Changes:
 
 * [#1451](https://github.com/ckeditor/ckeditor-dev/issues/1451): Fixed: Context menu is incorrectly positioned when opened with `Shift-F10`.
+* [#2194](https://github.com/ckeditor/ckeditor-dev/issues/2194): Fixed: Removing [Autocomplete](https://ckeditor.com/cke4/addon/autocomplete) insertion throws an error.
 
 ## CKEditor 4.10.1
 
