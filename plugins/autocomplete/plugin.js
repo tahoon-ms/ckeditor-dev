@@ -423,7 +423,7 @@
 		// LISTENERS ------------------
 
 		/**
-		 * The function that should be called once the content has changed.
+		 * The function that should be called once the view have to be repositioned e.g on scroll.
 		 *
 		 * @private
 		 */
