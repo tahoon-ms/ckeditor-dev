@@ -58,23 +58,24 @@
 		},
 		// When drag starts, dialog becomes centered with `position:absolute`, then it moves together with mouse (#2395).
 		'test dialog move': function() {
+			var window = CKEDITOR.document.getWindow(),
+				viewPaneSize = {
+					width: 1000,
+					height: 1000
+				},
+				stubs = {
+					getWindow: sinon.stub( CKEDITOR.document, 'getWindow' ),
+					getViewPane: sinon.stub( window, 'getViewPaneSize' )
+				};
+
+			stubs.getWindow.returns( window );
+			stubs.getViewPane.returns( viewPaneSize );
+
 			this.editorBot.dialog( 'link', function( dialog ) {
-				var window = CKEDITOR.document.getWindow(),
-					viewPaneSize = {
-						width: 1000,
-						height: 1000
-					},
-					element = dialog._.element.getFirst(),
+				var element = dialog._.element.getFirst(),
 					dialogSize = dialog.getSize(),
 					expectedX = Math.floor( ( viewPaneSize.width - dialogSize.width ) / 2 / viewPaneSize.width * 100 ),
-					expectedY = Math.floor( ( viewPaneSize.height - dialogSize.height ) / 2 / viewPaneSize.width * 100 ),
-					stubs = {
-						getWindow: sinon.stub( CKEDITOR.document, 'getWindow' ),
-						getViewPane: sinon.stub( window, 'getViewPaneSize' )
-					};
-
-				stubs.getWindow.returns( window );
-				stubs.getViewPane.returns( viewPaneSize );
+					expectedY = Math.floor( ( viewPaneSize.height - dialogSize.height ) / 2 / viewPaneSize.width * 100 );
 
 				dialog.parts.title.fire( 'mousedown', {
 					$: {
