@@ -66,8 +66,8 @@
 					},
 					element = dialog._.element.getFirst(),
 					dialogSize = dialog.getSize(),
-					expectedX = Math.floor( ( viewPaneSize.width - dialogSize.width ) / 2 ),
-					expectedY = Math.floor( ( viewPaneSize.height - dialogSize.height ) / 2 ),
+					expectedX = Math.floor( ( viewPaneSize.width - dialogSize.width ) / 2 / viewPaneSize.width * 100 ),
+					expectedY = Math.floor( ( viewPaneSize.height - dialogSize.height ) / 2 / viewPaneSize.width * 100 ),
 					stubs = {
 						getWindow: sinon.stub( CKEDITOR.document, 'getWindow' ),
 						getViewPane: sinon.stub( window, 'getViewPaneSize' )
@@ -99,11 +99,14 @@
 					preventDefault: function() {}
 				} );
 
-				actualX = parseInt( element.getStyle( 'left' ), 10 );
-				actualY = parseInt( element.getStyle( 'top' ), 10 );
+				actualX = parseInt( element.getStyle( 'left' ), 10 ) - expectedX;
+				actualY = parseInt( element.getStyle( 'top' ), 10 ) - expectedY;
 
-				assert.areEqual( 100, actualX - expectedX, 'Dialog should be moved by 100px to the right.' );
-				assert.areEqual( 100, actualY - expectedY, 'Dialog should be moved by 100px down.' );
+				expectedX = 100 / viewPaneSize.width * 100;
+				expectedY = 100 / viewPaneSize.height * 100;
+
+				assert.areEqual( expectedX, actualX, 'Dialog left should be moved by ' + expectedX + '% .' );
+				assert.areEqual( expectedY, actualY, 'Dialog top should be changed by ' + expectedY + '% .' );
 
 				CKEDITOR.document.fire( 'mouseup' );
 				dialog.hide();
