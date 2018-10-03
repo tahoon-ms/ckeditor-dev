@@ -705,18 +705,6 @@ CKEDITOR.DIALOG_STATE_BUSY = 2;
 		} );
 	}
 
-	// Re-layout the dialog on window resize.
-	function resizeWithWindow( dialog ) {
-		var win = CKEDITOR.document.getWindow();
-		function resizeHandler() {
-			dialog.layout();
-		}
-		win.on( 'resize', resizeHandler );
-		dialog.on( 'hide', function() {
-			win.removeListener( 'resize', resizeHandler );
-		} );
-	}
-
 	CKEDITOR.dialog.prototype = {
 		destroy: function() {
 			this.hide();
@@ -928,9 +916,6 @@ CKEDITOR.DIALOG_STATE_BUSY = 2;
 
 			CKEDITOR.tools.setTimeout( function() {
 				this.layout();
-				if ( CKEDITOR.env.ie && !CKEDITOR.env.edge ) {
-					resizeWithWindow( this );
-				}
 
 				this.parts.dialog.setStyle( 'visibility', '' );
 
