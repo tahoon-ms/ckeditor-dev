@@ -29,6 +29,8 @@ Fixed Issues:
 * [#898](https://github.com/ckeditor/ckeditor-dev/issues/898): Fixed: [Enhanced Image](https://ckeditor.com/cke4/addon/image2) long alt text protrudes into editor when image is selected.
 * [#1113](https://github.com/ckeditor/ckeditor-dev/issues/1113): [Firefox] Fixed: Nested contenteditable elements path not updated on focus with [Div Editing Area](https://ckeditor.com/cke4/addon/divarea) plugin.
 * [#1682](https://github.com/ckeditor/ckeditor-dev/issues/1682) Fixed: Hovering [Balloon Toolbar](https://ckeditor.com/cke4/addon/balloontoolbar) panel changes its size causing flickering.
+* [#1451](https://github.com/ckeditor/ckeditor-dev/issues/1451): Fixed: Context menu is incorrectly positioned when opened with `Shift-F10`.
+* [#1454](https://github.com/ckeditor/ckeditor-dev/issues/1454): Fixed: [Upload Widget](https://ckeditor.com/cke4/addon/uploadwidget) [`onAbort`](https://docs.ckeditor.com/ckeditor4/docs/#!/api/CKEDITOR.fileTools.uploadWidgetDefinition-property-onAbort) method is not called when loader is aborted.
 
 API Changes:
 
@@ -37,8 +39,6 @@ API Changes:
 * [#2045](https://github.com/ckeditor/ckeditor-dev/issues/2045): Extracted [`tools.eventsBuffer`](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_tools.html#method-eventsBuffer) and [`tools.throttle`](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_tools.html#method-throttle) functions logic into separate namespace.
 	* [`tools.eventsBuffer`](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_tools.html#method-eventsBuffer) has been extracted into [`tools.buffers.event`](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_tools_buffers_event.html)
 	* [`tools.throttle`](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_tools.html#method-throttle) has been extracted into [`tools.buffers.throttle`](https://docs.ckeditor.com/ckeditor4/latest/api/CKEDITOR_tools_buffers_throttle.html)
-* [#1451](https://github.com/ckeditor/ckeditor-dev/issues/1451): Fixed: Context menu is incorrectly positioned when opened with `Shift-F10`.
-* [#1454](https://github.com/ckeditor/ckeditor-dev/issues/1454): Fixed: [Upload Widget](https://ckeditor.com/cke4/addon/uploadwidget) [`onAbort`](https://docs.ckeditor.com/ckeditor4/docs/#!/api/CKEDITOR.fileTools.uploadWidgetDefinition-property-onAbort) method is not called when loader is aborted.
 
 ## CKEditor 4.10.1
 
