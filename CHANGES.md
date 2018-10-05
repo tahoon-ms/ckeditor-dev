@@ -13,6 +13,7 @@ New Features:
 * [#651](https://github.com/ckeditor/ckeditor-dev/issues/651): Text pasted using [Paste from Word](https://ckeditor.com/cke4/addon/pastefromword) preservers indentation in paragraphs.
 * [#1176](https://github.com/ckeditor/ckeditor-dev/pull/1176): The [Balloon Panel](https://ckeditor.com/cke4/addon/balloonpanel) can be attached to selection instead of element.
 * [#2453](https://github.com/ckeditor/ckeditor-dev/pull/1176): Add possibility to focus on `input` elements within [Panels](https://ckeditor.com/cke4/addon/panel).
+* [#2062](https://github.com/ckeditor/ckeditor-dev/pull/2062): Add emoji dropdown, which allows on choose emoji from toolbar.
 
 Fixed Issues:
 
